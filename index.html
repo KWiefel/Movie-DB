@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-Movie-DB</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Movies for You</h1>
+      <h3>The best MovieDB</h3>
+      <nav>
+        <input type="text" name="search" id="searchInput" />
+        <button onclick="search()">Search</button>
+        <div class="btn_wrapper">
+          <button onclick="yearUp()">year up</button>
+          <button onclick="yearDown()">year down</button>
+          <button onclick="bestRate()">best rate</button>
+        </div>
+        <p class="errorOutput"></p>
+      </nav>
+    </header>
+    <main>
+      <div class="movies_wrapper"></div>
+    </main>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
