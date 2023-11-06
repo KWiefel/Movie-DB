@@ -980,8 +980,8 @@ showMovies(movies);
 const search = () => {
   movieOutput.innerHTML = ``;
   const searchTerm = searchInput.value.toLowerCase();
-  const filteredMovies = movies.filter(
-    (elt) => elt[0].toLowerCase() === searchTerm
+  const filteredMovies = movies.filter((elt) =>
+    elt[0].toLowerCase().includes(searchTerm)
   );
 
   if (filteredMovies.length > 0) {
