@@ -954,7 +954,7 @@ const movies = [
 // map()
 
 // Genre anpassen
-movies.forEach((elt) => (elt[4] = elt[4].join(" ")));
+movies.forEach((elt) => (elt[4] = elt[4].join("<br>")));
 
 const searchInput = document.body.querySelector("#searchInput");
 

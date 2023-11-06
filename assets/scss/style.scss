@@ -100,13 +100,13 @@ html {
 
       .movies_wrapper {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 33%);
         gap: 30px;
         margin-inline: 10%;
         padding: 1em;
 
         .movie {
-          width: 100%;
+          width: 300px;
           padding: 1em;
           background: rgba(255, 255, 255, 0.5);
           -webkit-backdrop-filter: blur(10px);
