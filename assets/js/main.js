@@ -953,6 +953,9 @@ const movies = [
 // forEach()
 // map()
 
+// Genre anpassen
+movies.forEach((elt) => (elt[4] = elt[4].join(" ")));
+
 const searchInput = document.body.querySelector("#searchInput");
 
 const movieOutput = document.body.querySelector("main .movies_wrapper");
@@ -975,23 +978,19 @@ showMovies(movies);
 
 // Suchfunktion nach Titel
 const search = () => {
-  movies.map((elt) => {
-    if (elt[0].toLowerCase() === searchInput.value.toLowerCase()) {
-      movieOutput.innerHTML = `<div class="movie">
-      <h3>${elt[0]}</h3>
-      <p>${elt[1]}</p>
-      <h5>${elt[2]}</h5>
-      <p>${elt[3]}</p>
-      <p>${elt[4]}</p>
-      <p>${elt[5]}</p>
+  movieOutput.innerHTML = ``;
+  const searchTerm = searchInput.value.toLowerCase();
+  const filteredMovies = movies.filter(
+    (elt) => elt[0].toLowerCase() === searchTerm
+  );
+
+  if (filteredMovies.length > 0) {
+    showMovies(filteredMovies);
+  } else {
+    movieOutput.innerHTML = `<div class="movie">
+      <h3>Wir konnten keinen passenden Titel finden</h3>
     </div>`;
-    }
-    // else {
-    //   movieOutput.innerHTML = `<div class="movie">
-    //   <h3>Wir konnten keinen passenden Titel finden</h3>
-    // </div>`;
-    // }
-  });
+  }
 };
 
 // Sortierfunktion nach Jahr aufsteigend
